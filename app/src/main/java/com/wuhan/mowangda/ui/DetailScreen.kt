@@ -197,7 +197,7 @@ fun DetailScreen(
 
                 Row(
                     Modifier.fillMaxWidth().padding(top = 16.dp),
-                    horizontalArrangement = Arrangement.CenterHorizontally
+                    horizontalArrangement = Arrangement.Center
                 ) {
                     Text("数据保存在本机，到点由莫忘哒发通知提醒", fontSize = 10.5.sp, color = colors.muted)
                 }
