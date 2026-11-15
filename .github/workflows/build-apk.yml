@@ -25,13 +25,6 @@ jobs:
         with:
           gradle-version: "8.7"
 
-      - name: 生成签名密钥（每次构建独立生成，apk 可直接安装）
-        run: |
-          keytool -genkeypair -v -keystore release.jks -alias mowangda \
-            -keyalg RSA -keysize 2048 -validity 10000 \
-            -storepass mowangda -keypass mowangda \
-            -dname "CN=MoWangDa, OU=MoWangDa, O=MoWangDa, L=Wuhan, ST=Hubei, C=CN"
-
       - name: 编译 Release APK
         run: |
           set -o pipefail
