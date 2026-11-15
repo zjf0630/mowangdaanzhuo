@@ -210,7 +210,7 @@ object TimeParser {
         title = title
             .replace(Regex("^(然后|另外|再|顺便|记得|帮我)\\s*"), "")
             .replace(Regex("^之?前(?![台面边后])"), "")
-            .trim { it in "，,、。；;：: ".contains(it) }
+            .trim { ch -> "，,、。；;：: ".contains(ch) }
             .replace(Regex("之?前$"), "")
             .replace(Regex("\\s{2,}"), " ")
         if (title.isEmpty()) title = raw.trim()
