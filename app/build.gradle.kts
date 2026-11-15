@@ -16,15 +16,15 @@ android {
         resourceConfigurations += listOf("zh", "en")
     }
 
-    // 签名密钥固定在仓库里（release.p12）：
+    // 签名密钥固定在仓库里（release.jks）：
     // 每次 CI 构建都用同一把钥匙，升级版本时可以直接覆盖安装，数据不丢。
     // 这是自用侧载 App，密钥不入库的安全收益大于风险。
-    val ksFile = rootProject.file("release.p12")
+    val ksFile = rootProject.file("release.jks")
     signingConfigs {
         if (ksFile.exists()) {
             create("release") {
                 storeFile = ksFile
-                storeType = "PKCS12"
+                storeType = "JKS"
                 storePassword = "mowangda"
                 keyAlias = "mowangda"
                 keyPassword = "mowangda"
