@@ -22,6 +22,7 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -65,7 +66,7 @@ private val ListRow.key: String
     get() = when (this) {
         is ListRow.Section -> "s-$name"
         is ListRow.Task -> "t-${item.id}"
-        ListRow.DoneHead -> "done-head"
+        is ListRow.DoneHead -> "done-head"
         ListRow.Empty -> "empty"
         ListRow.Tail -> "tail"
     }
